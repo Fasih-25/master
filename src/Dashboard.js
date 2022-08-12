@@ -8,6 +8,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import img1 from './Galchen-Telescope.jpg';
 import img2 from './telescope_alignment_evaluation_image_labeled_1200.jpg';
 // import Rows from "./Rows";
+import Apps from "./components/Apps";
 
 function Dashboard() {
   const [user, loading, error] = useAuthState(auth);
@@ -37,7 +38,7 @@ function Dashboard() {
   return (
     // <div className="dashboard">
     //   <div className="dashboard__container">
-    //     Logged in as
+    //     Logged in asdashboard
     //     <div>{name}</div>
     //     <div>{user?.email}</div>
     //     <button className="dashboard__btn" onClick={logout}>
@@ -48,6 +49,14 @@ function Dashboard() {
  <>
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <a className="navbar-brand" href="#">Authenication App</a>
+        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <li className="nav-item">
+            <Link className="nav-link active" to="/dashboard/appss">Text Utils</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link active" to="/dashboard">Dashboard</Link>
+          </li>
+        </ul>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -62,6 +71,7 @@ function Dashboard() {
     <Route path="/" element={<Home />} />
     <Route path="/rows" element={<Rows />} />
     <Route path="/columns" element={<Columns />} />
+    <Route path="/appss" element={<Appss />} />
   </Routes>
 </>
   );
@@ -72,7 +82,7 @@ function Home() {
     <>
       <main>
         <h2>Welcome to the homepage!</h2>
-        <p>mein home page hun</p>    
+        <p>I'm a Home Page</p>    
       </main>
       <nav>
         {/* <Link to="/rows">Rows</Link>
@@ -103,6 +113,13 @@ function Home() {
     </>
   );
 }
+function Appss() {
+  return (
+   <>
+   <Apps />
+   </>
+  );
+}
 
 function Rows() {
   return (
@@ -116,7 +133,7 @@ function Rows() {
       <nav>
         <Link to="/">Home</Link>
       </nav>
-      <div className="container">
+      <div className="container1">
         <div className=" imageRow">
           <img src={img1} alt="" className="image" />
         </div>
@@ -182,7 +199,7 @@ function Columns() {
       <nav>
         <Link to="/">Home</Link>
       </nav>
-      <div className="container">
+      <div className="container1">
         <div className=" imageColumn">
           <img src={img1} alt="" className="image" />
         </div>
