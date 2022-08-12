@@ -82,7 +82,7 @@ function Home() {
     <>
       <main>
         <h2>Welcome to the homepage!</h2>
-        <p>I'm a Home Page</p>    
+        <p>I'm a Home Page</p>
       </main>
       <nav>
         {/* <Link to="/rows">Rows</Link>
